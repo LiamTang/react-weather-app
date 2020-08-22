@@ -1,0 +1,16 @@
+@import './style/base';
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $background;
+  .container {
+    width: 50vw;
+    height: 60vh;
+    border: 2px solid $border;
+    background: $container;
+  }
+}

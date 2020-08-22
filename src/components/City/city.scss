@@ -1,0 +1,12 @@
+@import '../../style/base';
+
+.country {
+  display: flex;
+  padding: 1rem;
+  h3 {
+    color: $city;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+}

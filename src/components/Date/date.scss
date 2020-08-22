@@ -1,0 +1,10 @@
+@import '../../style/base';
+.date {
+  display: flex;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  color: $date;
+  h4 {
+    margin-right: 10px;
+  }
+}

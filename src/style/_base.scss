@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// font family
+$sans: 'Open Sans', sans-serif;
+
+// colors
+$background: #eeeeee;
+$container: #ffffff;
+$border: #e1e1e1;
+$border-highlight: #4b4b4b;
+$city: #1f1f1f;
+$country: #1f1f1f;
+$temperature: #303030;
+$description: #cacaca;
+$date: #a1a1a1;
+$time: #7a7a7a;
+
+// break points
+$small-screen-max: 480px;
+$medium-screen-max: 768px;
+$large-screen-max: 992px;
+$xLarge-screen-max: 1200px;
+
+// media query
+@mixin smallMedia {
+  @media (max-width: #{$small-screen-max}) {
+    @content;
+  }
+}
+
+@mixin mediumMedia {
+  @media (max-width: #{$medium-screen-max}) {
+    @content;
+  }
+}
+
+@mixin largeMedia {
+  @media (max-width: #{$large-screen-max}) {
+    @content;
+  }
+}
+
+@mixin xLargeMedia {
+  @media (max-width:#{$xLarge-screen-max}) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 26px;
+  font-family: $sans;
+  @include xLargeMedia() {
+    font-size: 24px;
+  }
+  @include largeMedia() {
+    font-size: 22px;
+  }
+  @include mediumMedia() {
+    font-size: 20px;
+  }
+  @include smallMedia() {
+    font-size: 18px;
+  }
+}
