@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 // font family
-$sans: 'Open Sans', sans-serif;
+$default-font: 'Abril Fatface', cursive;
 
 // colors
 $background: #eeeeee;
 $container: #ffffff;
+$wrap: #000000;
 $border: #e1e1e1;
 $border-highlight: #4b4b4b;
+$current-weather-background: #f7f7f7;
 $city: #1f1f1f;
 $country: #1f1f1f;
 $temperature: #303030;
-$description: #cacaca;
+$description: #a5a1a1;
 $date: #a1a1a1;
 $time: #7a7a7a;
 
@@ -55,7 +57,7 @@ $xLarge-screen-max: 1200px;
 
 html {
   font-size: 26px;
-  font-family: $sans;
+  font-family: $default-font;
   @include xLargeMedia() {
     font-size: 24px;
   }

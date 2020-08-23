@@ -1,0 +1,45 @@
+@import '../../../style/base';
+.detail {
+  background: $current-weather-background;
+  width: 50%;
+  margin: 20px;
+  border-radius: 30px;
+  padding: 20px;
+
+  .information {
+    display: flex;
+    margin-top: 0.8rem;
+    .pressure {
+      width: 33%;
+      font-size: 0.8rem;
+      h4 {
+        color: $description;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    }
+    .visibility {
+      width: 33%;
+      font-size: 0.8rem;
+      h4 {
+        color: $description;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    }
+    .humidity {
+      font-size: 0.8rem;
+      h4 {
+        color: $description;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
