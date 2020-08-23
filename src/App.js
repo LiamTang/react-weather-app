@@ -5,8 +5,7 @@ import Date from './components/Date/Date';
 import CurrentWeather from './components/Current-Weather/CurrentWeather';
 import FutureWeather from './components/Future-Weather/FutureWeather';
 
-const API_KEY = 'bd4c1a8f97325ab7d72687fa20fdee7d';
-const GOOGLE_API_KEY = 'AIzaSyAU1xfRJgQzt5zPGKOzWD2T_Y1M8AMUf_I';
+
 
 class App extends React.Component {
   constructor(props) {
