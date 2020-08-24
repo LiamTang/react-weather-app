@@ -10,9 +10,13 @@
     letter-spacing: 1px;
   }
   .textSection {
+    &:focus::placeholder {
+      color: transparent;
+    }
     &::placeholder {
       color: white;
     }
+
     text-align: center;
     border-right-style: none;
     background: #29163e;

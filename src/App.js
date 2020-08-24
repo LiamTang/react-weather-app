@@ -19,6 +19,7 @@ class App extends React.Component {
       longitude: '',
       currentWeather: [],
       futureWeather: [],
+      hourlyForecast: [],
     };
   }
   fetchWeather = async (latitude, longitude) => {
@@ -26,6 +27,7 @@ class App extends React.Component {
     const result = await (await fetch(api)).json();
     this.getCurrentWeather(result);
     this.getFutureWeather(result);
+    this.getHourlyWeather(result);
   };
 
   fetchGeoData = async (city) => {
@@ -80,11 +82,33 @@ class App extends React.Component {
     }
   };
 
+  getHourlyWeather = (result) => {
+    const hourlyForecast = [];
+    if (result !== undefined) {
+      for (let i = 1; i < 6; i++) {
+        hourlyForecast.push({
+          hour: result.hourly[i].dt,
+          temp: Math.floor(result.hourly[i].temp - 273.15),
+        });
+      }
+
+      this.setState({
+        hourlyForecast: hourlyForecast,
+      });
+    }
+  };
+
   componentDidMount() {
     this.fetchGeoData('sydney');
   }
+
   render() {
-    const { address, currentWeather, futureWeather } = this.state;
+    const {
+      address,
+      currentWeather,
+      futureWeather,
+      hourlyForecast,
+    } = this.state;
 
     return (
       <div className="App">
@@ -93,7 +117,10 @@ class App extends React.Component {
           <div className="container">
             <City address={address} />
             <CurrentTime />
-            <CurrentWeather currentWeather={currentWeather} />
+            <CurrentWeather
+              currentWeather={currentWeather}
+              hourlyForecast={hourlyForecast}
+            />
             <FutureWeather futureWeather={futureWeather} />
           </div>
         </div>

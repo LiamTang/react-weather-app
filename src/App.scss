@@ -2,7 +2,7 @@
 
 .App {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,10 +14,13 @@
     border-radius: 40px;
     padding: 8px;
     background-color: $wrap;
+    transition: all 0.3s;
     .container {
+      width: 100%;
       border: 2px solid $border;
       background: $container;
       border-radius: 30px;
+      transition: all 0.3s;
     }
   }
 }

@@ -9,7 +9,7 @@ $container: #ffffff;
 $wrap: #000000;
 $border: #e1e1e1;
 $border-highlight: #4b4b4b;
-$current-weather-background: #f7f7f7;
+$current-weather-background: #eae5e5;
 $city: #1f1f1f;
 $country: #1f1f1f;
 $temperature: #303030;
@@ -59,15 +59,15 @@ html {
   font-size: 26px;
   font-family: $default-font;
   @include xLargeMedia() {
-    font-size: 24px;
-  }
-  @include largeMedia() {
     font-size: 22px;
   }
+  @include largeMedia() {
+    font-size: 18px;
+  }
   @include mediumMedia() {
-    font-size: 20px;
+    font-size: 12px;
   }
   @include smallMedia() {
-    font-size: 18px;
+    font-size: 8px;
   }
 }

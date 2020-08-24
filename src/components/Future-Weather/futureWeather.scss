@@ -2,4 +2,8 @@
 
 .futureWeather {
   display: flex;
+  @include smallMedia {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }

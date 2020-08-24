@@ -2,18 +2,32 @@
 
 .temperature {
   background: $current-weather-background;
-  width: 50%;
+  width: 20%;
   margin: 20px;
   border-radius: 30px;
   text-align: center;
-  h3 {
-    font-size: 1.4rem;
-    color: $temperature;
+  @include mediumMedia {
+    display: flex;
+    align-items: center;
   }
-  p {
-    font-size: 0.8rem;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: $description;
+  .image {
+    @include mediumMedia {
+      svg {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  &-detail {
+    h3 {
+      font-size: 1.4rem;
+      color: $temperature;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      color: $description;
+    }
   }
 }
