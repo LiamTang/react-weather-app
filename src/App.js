@@ -5,8 +5,8 @@ import Date from './components/Date/Date';
 import CurrentWeather from './components/Current-Weather/CurrentWeather';
 import FutureWeather from './components/Future-Weather/FutureWeather';
 
-
-
+const WEATHER_API = process.env.REACT_APP_WEATHER_API_KEY;
+const GOO_API = process.env.REACT_APP_GOOGLE_API_KEY;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,13 +17,13 @@ class App extends React.Component {
     };
   }
   fetchWeather = async (latitude, longitude) => {
-    const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${API_KEY}`;
-    const response = await (await fetch(api)).json();
-    console.log(response);
+    const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${WEATHER_API}`;
+    const result = await (await fetch(api)).json();
+    console.log(result);
   };
 
   fetchGeoData = async (city) => {
-    const newApi = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=${GOOGLE_API_KEY}`;
+    const newApi = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=${GOO_API}`;
     const response = await (await fetch(newApi)).json();
 
     let address = response.results[0].formatted_address;
