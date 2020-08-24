@@ -1,11 +1,11 @@
 import React from 'react';
 import './city.scss';
 
-export default function City() {
+export default function City(props) {
+  const { address } = props;
   return (
     <div className="country">
-      <h3>Sydney, </h3>
-      <h3>AU </h3>
+      <h3>{address}</h3>
     </div>
   );
 }
