@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import City from './components/City/City';
+import Search from './components/SearchBar/Search';
 import CurrentTime from './components/Current-Time/CurrentTime';
 import CurrentWeather from './components/Current-Weather/CurrentWeather';
 import FutureWeather from './components/Future-Weather/FutureWeather';
@@ -83,10 +84,11 @@ class App extends React.Component {
     this.fetchGeoData('sydney');
   }
   render() {
-    const { address, currentWeather, futureWeather, time } = this.state;
+    const { address, currentWeather, futureWeather } = this.state;
 
     return (
       <div className="App">
+        <Search fetchGeoData={this.fetchGeoData} />
         <div className="wrap">
           <div className="container">
             <City address={address} />

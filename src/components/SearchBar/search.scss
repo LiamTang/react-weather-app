@@ -1,0 +1,29 @@
+@import '../../style/base';
+.input {
+  margin-bottom: 2rem;
+  input {
+    padding: 1rem;
+    border: 6px solid #8e2c56;
+    outline-style: none;
+    font-family: $default-font;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+  .textSection {
+    &::placeholder {
+      color: white;
+    }
+    text-align: center;
+    border-right-style: none;
+    background: #29163e;
+    color: white;
+  }
+
+  .button {
+    cursor: pointer;
+    background: #5e1b44;
+    border-left-style: none;
+    position: relative;
+    color: white;
+  }
+}
