@@ -5,6 +5,7 @@ import Search from './components/SearchBar/Search';
 import CurrentTime from './components/Current-Time/CurrentTime';
 import CurrentWeather from './components/Current-Weather/CurrentWeather';
 import FutureWeather from './components/Future-Weather/FutureWeather';
+import Loading from './components/Loading/Loading';
 
 const WEATHER_API = process.env.REACT_APP_WEATHER_API_KEY;
 const GOO_API = process.env.REACT_APP_GOOGLE_API_KEY;
@@ -13,13 +14,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
       address: '',
-      latitude: '',
-      longitude: '',
       currentWeather: [],
       futureWeather: [],
       hourlyForecast: [],
+      loading: true,
     };
   }
   fetchWeather = async (latitude, longitude) => {
@@ -40,8 +39,6 @@ class App extends React.Component {
 
     this.setState({
       address: address,
-      latitude: latitude,
-      longitude: longitude,
     });
 
     this.fetchWeather(latitude, longitude);
@@ -60,13 +57,13 @@ class App extends React.Component {
 
       this.setState({
         futureWeather: futureWeather,
+        loading: false,
       });
     }
   };
 
   getCurrentWeather = (result) => {
     const currentWeather = [];
-    console.log(result);
     if (result !== undefined) {
       currentWeather.push({
         temp: Math.floor(result.current.temp - 273.15),
@@ -78,6 +75,7 @@ class App extends React.Component {
       });
       this.setState({
         currentWeather: currentWeather,
+        loading: false,
       });
     }
   };
@@ -94,6 +92,7 @@ class App extends React.Component {
 
       this.setState({
         hourlyForecast: hourlyForecast,
+        loading: false,
       });
     }
   };
@@ -108,6 +107,7 @@ class App extends React.Component {
       currentWeather,
       futureWeather,
       hourlyForecast,
+      loading,
     } = this.state;
 
     return (
@@ -116,12 +116,18 @@ class App extends React.Component {
         <div className="wrap">
           <div className="container">
             <City address={address} />
-            <CurrentTime />
-            <CurrentWeather
-              currentWeather={currentWeather}
-              hourlyForecast={hourlyForecast}
-            />
-            <FutureWeather futureWeather={futureWeather} />
+            {loading ? (
+              <Loading />
+            ) : (
+              <>
+                <CurrentTime />
+                <CurrentWeather
+                  currentWeather={currentWeather}
+                  hourlyForecast={hourlyForecast}
+                />
+                <FutureWeather futureWeather={futureWeather} />
+              </>
+            )}
           </div>
         </div>
       </div>

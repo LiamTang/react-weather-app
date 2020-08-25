@@ -4,16 +4,12 @@ import './chart.scss';
 
 export default function Chart(props) {
   const { hourlyForecast } = props;
-  console.log(hourlyForecast);
   const hours = hourlyForecast.map((hour) => {
     return new Date(hour.hour * 1000).getHours();
   });
   const temps = hourlyForecast.map((temp) => temp.temp);
 
   let option = {
-    title: {
-      text: 'Hourly Forecast',
-    },
     xAxis: {
       type: 'category',
       data: hours,
@@ -29,6 +25,7 @@ export default function Chart(props) {
   };
   return (
     <div className="chart">
+      <h3>Hourly Forecast</h3>
       <ECharts option={option} style={{ height: '10rem' }} />
     </div>
   );

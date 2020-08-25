@@ -6,15 +6,12 @@
   margin: 20px;
   border-radius: 30px;
   text-align: center;
-  @include mediumMedia {
-    display: flex;
-    align-items: center;
-  }
+
   .image {
     @include mediumMedia {
       svg {
-        width: 100px;
-        height: 100px;
+        width: 6rem;
+        height: 5rem;
       }
     }
   }

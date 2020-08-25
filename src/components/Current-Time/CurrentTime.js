@@ -3,7 +3,6 @@ import './currentTime.scss';
 
 export default function CurrentTime() {
   const date = new Date().toLocaleTimeString();
-  console.log(date);
   const hour = date.slice(0, 2) + date.slice(8, 11);
   const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const index = new Date().getDay();
